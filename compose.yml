@@ -1,0 +1,27 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: acecom-backend
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - HOST=0.0.0.0
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: acecom-frontend
+    ports:
+      - "5173:4173"
+    depends_on:
+      - backend
+    environment:
+      - NODE_ENV=production
+      - PORT=4173
+    restart: unless-stopped
