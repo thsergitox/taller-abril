@@ -25,6 +25,7 @@ Todas las rutas viven bajo el prefijo `/api`.
 
 | Método | Ruta                   | Descripción                                                   |
 | ------ | ---------------------- | ------------------------------------------------------------- |
+| GET    | `/api/health`          | Verifica que la API esté levantada                            |
 | GET    | `/api/members`         | Lista de miembros con links a Instagram, LinkedIn y GitHub    |
 | GET    | `/api/workshops`       | Lista de talleres, cada uno con los miembros que lo exponen   |
 | GET    | `/api/posts`           | Lista de posts del blog (sin `body`)                          |
@@ -58,6 +59,7 @@ src/
 │   └── post.ts
 ├── routes/
 │   ├── index.ts          # router general: registra cada *Routes con su prefix
+│   ├── health.ts
 │   ├── members.ts        # membersRoutes.get('/', ...)
 │   ├── workshops.ts      # workshopsRoutes.get('/', ...)
 │   └── posts.ts          # postsRoutes.get('/', ...), postsRoutes.get('/:id', ...)
