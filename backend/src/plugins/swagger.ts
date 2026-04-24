@@ -15,6 +15,7 @@ export default fp(async function swaggerPlugin(app: FastifyInstance) {
       },
       servers: [{ url: '/api' }],
       tags: [
+        { name: 'health', description: 'Verificación de estado de la API' },
         { name: 'members', description: 'Miembros de ACECOM' },
         { name: 'workshops', description: 'Talleres organizados' },
         { name: 'posts', description: 'Posts del blog' },
